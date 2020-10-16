@@ -27,12 +27,12 @@ class EmployeeAdapter(private val employees: List<Employee>) :
         //viewType = 1 then show item_call, otherwise show item_email
         return when (viewType) {
             1 -> {
-                AreaViewHolder(
+                EmployeeViewHolder(
                     LayoutInflater.from(parent.context).inflate(R.layout.item_call, parent, false)
                 )
             }
             else -> {
-                AreaViewHolder(
+                EmployeeViewHolder(
                     LayoutInflater.from(parent.context).inflate(R.layout.item_email, parent, false)
                 )
             }
@@ -44,7 +44,7 @@ class EmployeeAdapter(private val employees: List<Employee>) :
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (holder is AreaViewHolder) {
+        if (holder is EmployeeViewHolder) {
             holder.bind(employees[position])
             //set onCLick listener for each item
             holder.itemView.setOnClickListener {
@@ -64,7 +64,7 @@ class EmployeeAdapter(private val employees: List<Employee>) :
         }
     }
 
-    inner class AreaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class EmployeeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         //bind value for each item
         fun bind(employee: Employee) {
             val name: TextView = itemView.findViewById(R.id.tvName)
