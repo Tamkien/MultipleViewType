@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MultipleViewType</string>
+    <string name="call_item">Call Item</string>
+    <string name="textView">TextView</string>
+</resources>
